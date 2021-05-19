@@ -1,0 +1,9 @@
+@use 'src/styles/vars';
+
+.taskCounter {
+  color: vars.$white;
+  border-bottom: 1px solid vars.$white;
+  padding: vars.$base-space * 2 vars.$base-space * 3;
+  margin-block-start: vars.$base-space * 6;
+  font-weight: 700;;
+}

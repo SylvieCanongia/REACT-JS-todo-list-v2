@@ -1,0 +1,27 @@
+@use 'src/styles/vars';
+
+.taskList {
+  width: 100%;
+
+  .taskListItem {
+      // background: vars.$linear-gradient-blue;
+      background: vars.$white;
+      border: 2px solid vars.$blue;
+      color: vars.$dark-grey;
+      box-shadow: inset 0 0 25px rgb(0 0 0 / 10%);
+      padding: vars.$base-space * 2 vars.$base-space * 3;
+      font-size: vars.$base-font-size;
+      border-radius: vars.$large-radius;
+      margin-block: vars.$base-space;
+      cursor: pointer;
+
+      .taskListItem__label {
+        margin-inline: vars.$base-space;
+      }
+  }
+
+  .taskListItem--completed {
+    background: vars.$linear-gradient-blue-dark;
+  }
+
+}

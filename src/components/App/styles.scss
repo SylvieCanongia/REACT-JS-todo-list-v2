@@ -1,0 +1,7 @@
+@use 'src/styles/vars';
+
+.app {
+  max-width: 600px;
+  margin: 1rem auto;
+  border-radius: vars.$normal-radius;
+}
