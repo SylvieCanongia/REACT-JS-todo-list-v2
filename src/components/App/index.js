@@ -11,14 +11,14 @@ import './styles.scss';
 class App extends React.Component {
   render() {
     return (
-    <div className="app">
-      <AddTask />
-      <TaskCounter />
-      <TaskList />
-    </div>
+      <div className="app">
+        <AddTask />
+        <TaskCounter />
+        <TaskList />
+      </div>
     );
   }
-};
+}
 
 // == Export
 export default App;
