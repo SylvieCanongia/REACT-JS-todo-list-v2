@@ -1,18 +1,25 @@
 import React from 'react';
-
-import './taskList.scss';
+import PropTypes from 'prop-types';
 import TaskListItem from './TaskListItem';
 
-const TaskList = () => (
+import './taskList.scss';
+
+const TaskList = ({ tasks }) => (
   <ul className="taskList">
-    <TaskListItem />
-    <TaskListItem />
-    <TaskListItem />
-    <li className="taskListItem">
-      <input type="checkbox" name="checkbox-1" id="checkbox-1" className="taskListItem__input" />
-      <label htmlFor="checkbox-1" className="taskListItem__label">Tâche non complétée</label>
-    </li>
+    {tasks.map((task) => (
+      <TaskListItem id={task.id} label={task.label} done={task.done} key={task.id} />
+    ))}
   </ul>
 );
+
+TaskList.propTypes = {
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+      done: PropTypes.bool.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
 
 export default TaskList;

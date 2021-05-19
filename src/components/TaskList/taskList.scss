@@ -15,12 +15,12 @@
       margin-block: vars.$base-space;
       cursor: pointer;
 
-      .taskListItem__label {
-        margin-inline: vars.$base-space;
+      .taskListItem__checkbox {
+        margin-right: vars.$base-space;
       }
   }
 
-  .taskListItem--completed {
+  .taskListItem--done {
     background: vars.$linear-gradient-blue-dark;
   }
 

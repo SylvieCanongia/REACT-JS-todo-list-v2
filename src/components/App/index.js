@@ -1,8 +1,11 @@
 // == Import npm
 import React from 'react';
+import initialTasks from 'src/data/tasks';
+
 import AddTask from '../AddTask';
 import TaskCounter from '../TaskCounter';
 import TaskList from '../TaskList';
+
 
 // == Import
 import './styles.scss';
@@ -14,7 +17,7 @@ class App extends React.Component {
       <div className="app">
         <AddTask />
         <TaskCounter />
-        <TaskList />
+        <TaskList tasks={initialTasks} />
       </div>
     );
   }
