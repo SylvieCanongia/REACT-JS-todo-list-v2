@@ -13,7 +13,7 @@ const TaskListItem = ({ id, label, done }) => {
   return (
     <li className={cssClass}>
       <label htmlFor={checkboxId} className="taskListItem__label">
-        <input type="checkbox" name={checkboxId} id={checkboxId} className="taskListItem__checkbox" />
+        <input type="checkbox" name={checkboxId} id={checkboxId} className="taskListItem__checkbox" checked={done} />
         {label}
       </label>
     </li>
