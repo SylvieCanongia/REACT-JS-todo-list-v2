@@ -11,16 +11,29 @@ import './styles.scss';
 
 // == Composant
 class App extends React.Component {
-  getNbTasksNotDone = () => initialTasks.filter((task) => task.done === false).length;
+  state = {
+    tasks: initialTasks,
+    newTaskLabel: '',
+  }
+
+  setnewTaskLabel = (newValue) => {
+    this.setState({
+      newTaskLabel: newValue,
+    });
+  }
 
   render() {
-    const nbTasksNotDone = this.getNbTasksNotDone;
+    const {
+      tasks,
+      newTaskLabel,
+    } = this.state;
+    const nbTasksNotDone = tasks.filter((task) => task.done === false).length;
 
     return (
       <div className="app">
-        <AddTask />
+        <AddTask newTaskLabel={newTaskLabel} setnewTaskLabel={this.setnewTaskLabel} />
         <TaskCounter nbTasksNotDone={nbTasksNotDone} />
-        <TaskList tasks={initialTasks} />
+        <TaskList tasks={tasks} />
       </div>
     );
   }
