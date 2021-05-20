@@ -1,12 +1,14 @@
 import React from 'react';
 import Proptypes from 'prop-types';
+import classNames from 'classnames';
 
 const TaskListItem = ({ id, label, done }) => {
   const checkboxId = `checkbox-${id}`;
-  let cssClass = 'taskListItem';
-  if (done) {
-    cssClass += ' taskListItem--done';
-  }
+  // let cssClass = 'taskListItem';
+  // if (done) {
+  //   cssClass += ' taskListItem--done';
+  // }
+  const cssClass = classNames('taskListItem', { 'taskListItem--done': done });
 
   return (
     <li className={cssClass}>
