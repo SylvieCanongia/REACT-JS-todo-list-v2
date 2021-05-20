@@ -6,7 +6,6 @@ import './addTask.scss';
 const AddTask = ({ newTaskLabel, setnewTaskLabel, onAddTask }) => {
   const handleSubmitNewTask = (event) => {
     event.preventDefault();
-    console.log('Soumission du formulaire');
     onAddTask(event.currentTarget.value);
   };
 

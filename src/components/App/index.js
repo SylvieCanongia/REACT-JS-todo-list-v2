@@ -22,19 +22,20 @@ class App extends React.Component {
     });
   }
 
-  // create new task
+  // create an object that represents the new task
   onAddTask = () => {
-    const { newTaskLabel } = this.state;
-    console.log('ici bientôt une nouvelle tâche', newTaskLabel);
-    // const newTask = {
-    //   id: 10,
-    //   label: this.newTaskLabel,
-    //   done: false,
-    // };
+    const { newTaskLabel, tasks } = this.state;
+    const tasksIds = tasks.map((task) => task.id);
+    const newTask = {
+      id: Math.max(...tasksIds) + 1,
+      label: newTaskLabel,
+      done: false,
+    };
 
-    // this.setState((prevState) => ({
-    //   tasks: [...prevState.tasks, newTask],
-    // }));
+    this.setState(() => ({
+      tasks: [...tasks, newTask],
+      newTaskLabel: '',
+    }));
   }
 
   render() {
