@@ -22,6 +22,21 @@ class App extends React.Component {
     });
   }
 
+  // create new task
+  onAddTask = () => {
+    const { newTaskLabel } = this.state;
+    console.log('ici bientôt une nouvelle tâche', newTaskLabel);
+    // const newTask = {
+    //   id: 10,
+    //   label: this.newTaskLabel,
+    //   done: false,
+    // };
+
+    // this.setState((prevState) => ({
+    //   tasks: [...prevState.tasks, newTask],
+    // }));
+  }
+
   render() {
     const {
       tasks,
@@ -31,7 +46,11 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        <AddTask newTaskLabel={newTaskLabel} setnewTaskLabel={this.setnewTaskLabel} />
+        <AddTask
+          newTaskLabel={newTaskLabel}
+          setnewTaskLabel={this.setnewTaskLabel}
+          onAddTask={this.onAddTask}
+        />
         <TaskCounter nbTasksNotDone={nbTasksNotDone} />
         <TaskList tasks={tasks} />
       </div>
