@@ -8,7 +8,7 @@ const TaskList = ({ tasks, onTaskUpdate }) => (
   <ul className="taskList">
     {tasks.map((task) => (
       <TaskListItem
-        id={task.id}
+        key={task.id}
         {...task}
         onTaskUpdate={onTaskUpdate}
       />
