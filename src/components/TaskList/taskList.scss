@@ -4,7 +4,6 @@
   width: 100%;
 
   .taskListItem {
-      // background: vars.$linear-gradient-blue;
       background: vars.$white;
       border: 2px solid vars.$blue;
       color: vars.$dark-grey;
@@ -22,6 +21,7 @@
 
   .taskListItem--done {
     background: vars.$linear-gradient-blue-dark;
+    // text-decoration: line-through;
   }
 
 }
