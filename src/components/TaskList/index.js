@@ -9,9 +9,7 @@ const TaskList = ({ tasks, onTaskUpdate }) => (
     {tasks.map((task) => (
       <TaskListItem
         id={task.id}
-        label={task.label}
-        done={task.done}
-        key={task.id}
+        {...task}
         onTaskUpdate={onTaskUpdate}
       />
     ))}
@@ -22,8 +20,6 @@ TaskList.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      label: PropTypes.string.isRequired,
-      done: PropTypes.bool.isRequired,
     }).isRequired,
   ).isRequired,
   onTaskUpdate: PropTypes.func.isRequired,

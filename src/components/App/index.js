@@ -39,26 +39,24 @@ class App extends React.Component {
   }
 
   // onTaskUpdate = (_newValue, taskId) => {
-  //   // console.log(`[app] on va mettre à jour la tâche ${taskId}, nouvelle valeur : ${newValue}`);
+  //   // console.log(`[app] on va mettre à jour la tâche ${taskId},nouvelle valeur : ${newValue}`);
   //   const { tasks } = this.state;
   //   const taskToUpdate = tasks.find((task) => task.id === taskId);
   //   taskToUpdate.done = !taskToUpdate.done;
 
-  //   this.setState(() => (
+  //   this.setState((prevState) => (
   //     // create the new version of the task property
-  //     tasks.map((task) => (task.id === taskId ? taskToUpdate : task))
+  //     prevState.tasks.map((task) => (task.id === taskId ? taskToUpdate : task))
   //   ));
   // }
 
   onTaskUpdate = (newValue, taskId) => {
     const { tasks } = this.state;
     const newTaskArray = tasks.map((task) => {
-      if(task.id === taskId) {
-        const taskCopy = {
-          id: task.id,
-          label: task.label,
-          done: newValue,
-        };
+      if (task.id === taskId) {
+        const taskCopy = { ...task, done: newValue };
+        // create a new copy of an object
+        // taskCopy.done = newValue; //taskCopy.done = !taskCopy.done;
         return taskCopy;
       }
       return task;
